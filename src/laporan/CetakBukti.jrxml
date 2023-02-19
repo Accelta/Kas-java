@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc72f9dc-8532-45a0-8164-16b25ce89fdf">
+	<property name="ireport.zoom" value="1.2100000000000029"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT data_siswa.nama_siswa, data_siswa.abs, data_siswa.telp, kas.tgl_bayar, kas.jumlah_pembayaran FROM data_siswa INNER JOIN kas ON data_siswa.ID=kas.id]]>
+	</queryString>
+	<field name="nama_siswa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="abs" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_bayar" class="java.time.LocalDateTime">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_pembayaran" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nama_siswa">
+		<groupExpression><![CDATA[$F{nama_siswa}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="46c7e78f-c480-4f03-ae18-ef43f3a80a06"/>
+				<text><![CDATA[nama_siswa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="41" width="100" height="20" uuid="9804d811-2f08-4ac3-a591-50c44e1a3fca"/>
+				<text><![CDATA[abs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="41" width="100" height="20" uuid="20df921d-f56d-48d7-888d-83c15747967b"/>
+				<text><![CDATA[telp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="41" width="100" height="20" uuid="522dc165-9d96-409a-b48c-7e13e43f39e4"/>
+				<text><![CDATA[tgl_bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="41" width="100" height="20" uuid="d6a44507-a560-4130-814d-c112a91b1db9"/>
+				<text><![CDATA[jumlah_pembayaran]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d27d5201-e360-4bbd-b5bf-0bf5eef8e6cd"/>
+				<textFieldExpression><![CDATA[$F{nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="100" height="20" uuid="bb39f1d7-5195-4b5c-b67a-5d60e1d8f8e0"/>
+				<textFieldExpression><![CDATA[$F{abs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="20" uuid="62c45dec-5618-4a48-ba64-7de8338cedf1"/>
+				<textFieldExpression><![CDATA[$F{telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="100" height="20" uuid="9b392747-17af-420d-bdca-f1d008fc05f3"/>
+				<textFieldExpression><![CDATA[""+$F{tgl_bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="952d8131-8423-4c58-ac6b-307e0c82b5e3"/>
+				<textFieldExpression><![CDATA[$F{jumlah_pembayaran}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="2dac0287-a158-48f6-a7b8-dba4f788bd74"/>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="42728783-fab3-46a0-953f-38bf08714834"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
